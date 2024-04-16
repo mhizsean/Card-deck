@@ -4,7 +4,7 @@ import "./Cards.css";
 import axios from "axios";
 import { Howl } from "howler";
 import Snap from "../assets/sounds/snap_sound.mp3";
-// import Shuffle from "../assets/sounds/shuffle_sound.mp3";
+import Shuffle from "../assets/sounds/shuffle_sound.mp3";
 
 const Card = () => {
   const [deckId, setDeckId] = useState(null);
