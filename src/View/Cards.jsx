@@ -4,7 +4,8 @@ import "./Cards.css";
 import axios from "axios";
 import { Howl } from "howler";
 import Snap from "../assets/sounds/snap_sound.mp3";
-import Shuffle from "../assets/sounds/shuffle_sound.mp3";
+// import Shuffle from "../assets/sounds/shuffle_sound.mp3";
+import Logo from "../assets/logo.png";
 
 const Card = () => {
   const [deckId, setDeckId] = useState(null);
@@ -17,7 +18,6 @@ const Card = () => {
     axios
       .get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
       .then((res) => {
-        console.log(res.data, "id");
         setDeckId(res.data.deck_id);
         // cardDrawSound.play();
       })
@@ -34,7 +34,6 @@ const Card = () => {
       axios
         .get(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=1`)
         .then((res) => {
-          console.log(res.data);
           const newCard = res.data.cards[0];
           const lastCard = cardsDrawn[cardsDrawn.length - 1];
           handleSnap(newCard, lastCard);
@@ -84,10 +83,10 @@ const Card = () => {
     volume: 1.0,
   });
 
-  const cardDrawSound = new Howl({
-    src: [Shuffle],
-    volume: 1.0,
-  });
+  //   const cardDrawSound = new Howl({
+  //     src: [Shuffle],
+  //     volume: 1.0,
+  //   });
   const restartGame = () => {
     cardDeck();
     setCardsDrawn([]);
@@ -97,7 +96,7 @@ const Card = () => {
     <div>
       <div className="header">
         <span className="header-title">SNAP!</span>
-        <span className="header-menu">ooo</span>
+        <img src={Logo} alt="logo" />
       </div>
 
       <div className="container">
