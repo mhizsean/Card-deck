@@ -4,7 +4,6 @@ import "./Cards.css";
 import axios from "axios";
 import { Howl } from "howler";
 import Snap from "../assets/sounds/snap_sound.mp3";
-// import Shuffle from "../assets/sounds/shuffle_sound.mp3";
 import Logo from "../assets/logo.png";
 
 const Card = () => {
@@ -19,7 +18,6 @@ const Card = () => {
       .get("https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1")
       .then((res) => {
         setDeckId(res.data.deck_id);
-        // cardDrawSound.play();
       })
       .catch((err) => {
         console.error("error loading card:", err);

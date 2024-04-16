@@ -78,17 +78,10 @@ describe("Drawing a card", () => {
 
 describe("Snap Suit Functionality", () => {
     it("displays no message when theres no match", async () => {
-        // Setup initial card draw
-
-        // Setup second card draw with the same suit
-
         render(<Cards />);
         const drawButton = await screen.findByRole("button", {
             name: /draw card/i,
         });
-
-        // Draw the first card
-
         axios.get.mockResolvedValueOnce({
             data: {
                 cards: [{ image: mockImage, value: "5", suit: "Hearts" }],
@@ -107,7 +100,6 @@ describe("Snap Suit Functionality", () => {
             },
         });
 
-        // Draw the second card
         fireEvent.click(drawButton);
 
         await waitFor(() => {
@@ -124,16 +116,11 @@ describe("Snap Suit Functionality", () => {
     });
 
     it('displays "SNAP SUIT!" when two consecutive cards have the same suit', async () => {
-        // Setup initial card draw
-
-        // Setup second card draw with the same suit
 
         render(<Cards />);
         const drawButton = await screen.findByRole("button", {
             name: /draw card/i,
         });
-
-        // Draw the first card
 
         axios.get.mockResolvedValueOnce({
             data: {
@@ -153,7 +140,6 @@ describe("Snap Suit Functionality", () => {
             },
         });
 
-        // Draw the second card
         fireEvent.click(drawButton);
 
         await waitFor(() => {
@@ -166,16 +152,10 @@ describe("Snap Suit Functionality", () => {
     });
 
     it('displays "SNAP VALUE!" when two consecutive cards have the same value', async () => {
-        // Setup initial card draw
-
-        // Setup second card draw with the same suit
-
         render(<Cards />);
         const drawButton = await screen.findByRole("button", {
             name: /draw card/i,
         });
-
-        // Draw the first card
 
         axios.get.mockResolvedValueOnce({
             data: {
@@ -194,8 +174,6 @@ describe("Snap Suit Functionality", () => {
                 cards: [{ image: mockImage, value: "5", suit: "Diamonds" }],
             },
         });
-
-        // Draw the second card
         fireEvent.click(drawButton);
 
         await waitFor(() => {
