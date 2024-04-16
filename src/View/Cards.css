@@ -1,0 +1,75 @@
+.header {
+    border: 2px solid #eee;
+    border-left: none;
+    border-right: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0.65rem;
+}
+
+.header-title {
+    color: #727272;
+    font-size: 30px;
+}
+
+.header-menu {
+    font-size: 30px;
+}
+
+.container {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.snap-msg {
+    text-align: center;
+    height: 65px;
+}
+
+.snap-msg h2 {
+    font-size: 32px ;
+}
+.card-decks {
+    display: flex;
+    justify-content: center;
+    column-gap: 3rem;
+}
+
+.card-decks .deck-1 {
+    height: 200px;
+    width: 130px;
+    border: 2px solid #000;
+}
+
+.card-decks .deck-2 {
+    height: 200px;
+    width: 130px;
+    border: 2px solid #000;
+}
+
+.card-count {
+    margin: 18px 0;
+    text-align: center;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.button {
+    background-color: #008BFE;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    padding: 10px 20px;
+    outline: none;
+    transition: ease-in-out 0.3s;
+    cursor: pointer;
+}
+
+.draw-btn:hover {
+    background-color: #008cfec0;
+  }
